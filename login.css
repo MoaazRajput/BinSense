@@ -1,0 +1,353 @@
+/* =====================================================
+   BinSense – Login / Auth Page Styles
+   ===================================================== */
+
+.auth-body {
+  min-height: 100vh;
+  background-color: var(--bg-darker);
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(46,204,113,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(46,204,113,0.04) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center the card vertically */
+.auth-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* Auth Card */
+.auth-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--green);
+  border-radius: 18px;
+  padding: 36px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+
+/* Logo circle */
+.auth-logo {
+  width: 60px;
+  height: 60px;
+  background: rgba(46,204,113,0.12);
+  color: var(--green);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  border: 1px solid rgba(46,204,113,0.2);
+}
+
+/* Social login buttons */
+.social-login-btn {
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.social-login-btn:hover {
+  background-color: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* Divider */
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.auth-divider span {
+  position: relative;
+  background-color: var(--bg-card);
+  padding: 0 12px;
+  font-size: 0.78rem;
+  color: #ffffff;
+}
+
+/* Form groups */
+.auth-form-group {
+  margin-bottom: 16px;
+}
+
+.auth-form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 7px;
+}
+
+/* Input wrap with icon */
+.auth-input-wrap {
+  display: flex;
+  align-items: center;
+  background-color: rgba(46,204,113,0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0 14px;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.auth-input-wrap:focus-within {
+  border-color: rgba(46,204,113,0.5);
+  box-shadow: 0 0 0 3px rgba(46,204,113,0.07);
+}
+
+.auth-input-wrap > i {
+  color: #ffffff;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.auth-input-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  padding: 11px 0;
+}
+
+.auth-input-wrap input::placeholder { color: rgba(255,255,255,0.45); }
+
+/* Eye toggle button */
+.eye-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.eye-btn:hover { color: var(--green); }
+
+/* Field error message */
+.field-error {
+  font-size: 0.75rem;
+  color: #e74c3c;
+  margin-top: 5px;
+  min-height: 16px;
+}
+
+/* Forgot link */
+.forgot-link {
+  font-size: 0.78rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover { color: var(--green); }
+
+/* Remember me checkbox */
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.83rem;
+  color: #ffffff;
+}
+
+.remember-label input[type="checkbox"] { display: none; }
+
+.checkmark {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.remember-label input:checked + .checkmark {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+.remember-label input:checked + .checkmark::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translateY(-1px);
+}
+
+/* Password strength */
+.pass-strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.sbar {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+  transition: background 0.3s;
+}
+
+.strength-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── Setup Guide ── */
+.setup-alert {
+  background: rgba(22,163,74,0.08);
+  border: 1px solid rgba(22,163,74,0.2);
+  border-radius: 8px;
+  padding: 11px 14px;
+  display: flex;
+  align-items: center;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.setup-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setup-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.setup-step .step-num {
+  width: 22px;
+  height: 22px;
+  background: rgba(22,163,74,0.15);
+  color: var(--green);
+  border: 1px solid rgba(22,163,74,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.setup-step code {
+  background: rgba(255,255,255,0.07);
+  color: #a5f3fc;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+}
+
+/* ── Google Sign-In wrapper ── */
+.gsi-wrap {
+  display: flex;
+  justify-content: center;
+  min-height: 44px;
+}
+
+/* ── Fallback Google button (manual style) ── */
+.gsi-fallback-btn {
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  color: #3c4043;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 11px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+.gsi-fallback-btn:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+/* ── User badge (shown after login) ── */
+.user-badge {
+  position: fixed;
+  top: 70px; right: 20px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50px;
+  padding: 6px 14px 6px 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.83rem;
+  color: #f1f5f9;
+  z-index: 999;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  animation: slideIn 0.3s ease;
+}
+.user-pic {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-card { padding: 24px 20px; }
+  .gsi-wrap .g_id_signin { transform: scale(0.9); }
+}
